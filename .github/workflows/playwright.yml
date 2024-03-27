@@ -19,9 +19,13 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Print
-        run: echo ${{ vars.BASE_URL}}
+        run: echo ${{ vars.BASE_URL}}${{ vars.USERNAME}}${{ vars.PASSWORD}}
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          BASE_URL: ${{ vars.BASE_URL}}
+          USERNAME: ${{ vars.USERNAME}}
+          PASSWORD: ${{ vars.PASSWORD}}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
