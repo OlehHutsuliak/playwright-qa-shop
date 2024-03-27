@@ -6,7 +6,7 @@ on:
     branches: [main, master]
 
 env:
-  BASE_URL: ${{ secrets.BASE_URL }}
+  BASE_URL: ${{ vars.BASE_URL }}
 
 jobs:
   test:
