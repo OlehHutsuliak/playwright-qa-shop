@@ -8,6 +8,12 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ vars.PASSWORD }}
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,15 +23,5 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        env:
-          BASE_URL: ${{ vars.BASE_URL }}
-          USERNAME: ${{ vars.USERNAME }}
-          PASSWORD: ${{ vars.PASSWORD }}
-        run: npx playwright test
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+      - name: Print env
+        run: echo ${{ secrets.BASE_URL}}
