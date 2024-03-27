@@ -4,6 +4,10 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
   test:
     timeout-minutes: 60
@@ -18,4 +22,4 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Print env
-        run: echo ${{ secrets.USERNAME}}
+        run: echo $DAY_OF_WEEK
