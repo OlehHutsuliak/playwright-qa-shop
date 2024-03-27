@@ -5,6 +5,11 @@ on:
   pull_request:
     branches: [main, master]
 
+env:
+  BASE_URL: ${{ vars.BASE_URL }}
+  USERNAME: ${{ vars.USERNAME }}
+  PASSWORD: ${{ vars.PASSWORD }}
+
 jobs:
   test:
     timeout-minutes: 60
