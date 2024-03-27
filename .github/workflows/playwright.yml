@@ -5,11 +5,6 @@ on:
   pull_request:
     branches: [main, master]
 
-env:
-  BASE_URL: ${{ vars.BASE_URL }}
-  USERNAME: ${{ vars.USERNAME }}
-  PASSWORD: ${{ vars.PASSWORD }}
-
 jobs:
   test:
     timeout-minutes: 60
@@ -24,7 +19,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Print
-        run: echo $BASE_URL
+        run: echo ${{ vars.BASE_URL}}
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
