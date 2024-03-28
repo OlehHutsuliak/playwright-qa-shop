@@ -22,7 +22,7 @@ test.describe('Products filtering', () => {
     expect(filteredProductNames).toEqual(expectedFilteredProductsNames);
   });
 
-  test('Filter products by name DESC', async ({ homePage }) => {
+  test('Filter products by Name DESC', async ({ homePage }) => {
     const productsNames = await getItemsProperty(homePage.product, homePage.productNameSelector);
     const expectedFilteredProductsNames = await sortProperty(productsNames, ProductDetails.Name, 'DESC');
 
@@ -32,7 +32,7 @@ test.describe('Products filtering', () => {
     expect(filteredProductNames).toEqual(expectedFilteredProductsNames);
   });
 
-  test('Filter products by price ASC', async ({ homePage }) => {
+  test('Filter products by Price ASC', async ({ homePage }) => {
     const productPrices = await getItemsProperty(homePage.product, homePage.productPriceSelector);
     const expectedFilteredProductsPrices = await sortProperty(productPrices, ProductDetails.Price, 'ASC');
 
@@ -42,7 +42,7 @@ test.describe('Products filtering', () => {
     expect(filteredProductPrices).toEqual(expectedFilteredProductsPrices);
   });
 
-  test('Filter Products by price DESC', async ({ homePage }) => {
+  test('Filter Products by Price DESC', async ({ homePage }) => {
     const productPrices = await getItemsProperty(homePage.product, homePage.productPriceSelector);
     const expectedFilteredProductsPrices = await sortProperty(productPrices, ProductDetails.Price, 'DESC');
 

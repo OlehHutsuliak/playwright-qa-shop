@@ -9,7 +9,7 @@ test.describe('Adding product to Cart', () => {
   const product1Name = 'Sauce Labs Backpack';
   const product2Name = 'Sauce Labs Bike Light';
 
-  test('Add products to Cart', async ({ homePage, cartPage }) => {
+  test('Adding products to Cart from Home Page', async ({ homePage, cartPage }) => {
     const expectedCartBadgeNumber = '2';
     const expectedNumberOfProductsInCart = 2;
 
@@ -25,7 +25,7 @@ test.describe('Adding product to Cart', () => {
     expect(productNames).toEqual([product1Name, product2Name]);
   });
 
-  test('Add Products from Product Details Page:', async ({ homePage, productDetailsPage, cartPage }) => {
+  test('Adding products from Product Details Page:', async ({ homePage, productDetailsPage, cartPage }) => {
     const expectedCartBadgeNumber = '1';
     const expectedNumberOfProductsInCart = 1;
 
@@ -48,7 +48,7 @@ test.describe('Removing product from Cart', () => {
   const product3 = 'Sauce Labs Bike Light';
   const expectedProductButtonValue = 'Add to cart';
 
-  test('User can remove a product while being on Home Page', async ({ homePage, cartPage }) => {
+  test('Removing products while being on Home Page', async ({ homePage, cartPage }) => {
     await homePage.addProductToCart(product1);
     await homePage.addProductToCart(product2);
     await homePage.addProductToCart(product3);
@@ -64,11 +64,7 @@ test.describe('Removing product from Cart', () => {
     expect(productsLeftInCart).toEqual([product2, product3]);
   });
 
-  test('User can remove a product while being on Product Details Page', async ({
-    homePage,
-    productDetailsPage,
-    cartPage,
-  }) => {
+  test('Removing products while being on Product Details Page', async ({ homePage, productDetailsPage, cartPage }) => {
     await homePage.addProductToCart(product1);
     await homePage.addProductToCart(product2);
     await homePage.addProductToCart(product3);
@@ -94,7 +90,7 @@ test.describe('Removing product from Cart', () => {
     expect(productsInCart).toEqual([product3]);
   });
 
-  test('User can remove a product while being on Cart Page', async ({ homePage, productDetailsPage, cartPage }) => {
+  test('Removing products while being on Cart Page', async ({ homePage, productDetailsPage, cartPage }) => {
     const expectedCartBadgeNumber = '1';
 
     await homePage.addProductToCart(product1);
