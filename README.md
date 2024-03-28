@@ -7,8 +7,9 @@ Welcome to the Test Automation Solution (TAS) for Swag Labs, an e-commerce platf
 1. [Installation](#installation)
 2. [Configuration](#configuration)
 3. [Running Tests](#running-tests)
-4. [CI/CD Integration](#ci-cd-integration)
+4. [CI Integration](#ci-integration)
 5. [Test Structure](#test-structure)
+6. [Test Cases](#test-cases)
 
 ## Installation
 
@@ -40,7 +41,7 @@ To run a single test, use the following command, replacing `<testName>` with the
 npm run test:specific "<testName>"
 ```
 
-## CI/CD Integration
+## CI Integration
 
 The test suite is integrated with a Continuous Integration (CI) pipeline. You can download the test report from the CI pipeline by following these steps:
 
@@ -50,7 +51,7 @@ The test suite is integrated with a Continuous Integration (CI) pipeline. You ca
 
 The downloaded zip file contains an HTML report generated from the test run. You can extract and view this report to analyze the results of the automated tests.
 
-## Test Structure
+## Test Suite Structure
 
 The test suite is organized into the following test files:
 
@@ -61,3 +62,7 @@ The test suite is organized into the following test files:
 - **setup.spec.ts:** Contains tests related to user authentication setup.
 
 Each test file addresses specific functionalities of the Swag Labs website.
+
+## Test Cases
+
+You can find the test cases defined in the [test-cases.md](test-cases.md) file. This document provides comprehensive coverage of test scenarios and expected outcomes for the functionalities tested in the Swag Labs website.
